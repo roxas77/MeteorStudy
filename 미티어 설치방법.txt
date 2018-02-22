@@ -1,0 +1,12 @@
+1. choco 설치
+- 윈도우용 패키지 매니저 choco를 통해 미티어를 설치할 수 있다.
+- window power shell에서 설치가 가장 잘되는데 자세한 내용은 choco사이트에 기재되어있다.(https://chocolatey.org/install)
+- 윈도우 10에서는 다음과 같은 커맨드를 입력하여 설치 가능하다.
+> Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+- 만약 admin관련 에러가 난다면 '관리자 권한으로 실행'으로 power shell이나 cmd를 실행 후 다시 진행한다.
+
+2. 미티어 설치
+- choco가 설치 완료된 후 다음과 같이 명령어를 수행한다.
+> choco install meteor
+- 개인적으로 choco가 설치된후 power shell 보단 cmd에서 작업하길 권장한다. power shell로 할 경우 빈번히 행걸림이 발생한다.
+- 설치가 완료 된 후 meteor update하여 미티어를 최신버전으로 업데이트한다.
