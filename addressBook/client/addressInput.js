@@ -8,6 +8,20 @@ Template.addressInput.events({
 			birthday : tmpl.find("input[name=birthday]").value
 		};
 
+		/*1. 데이터 검증 코드*/
+		try{
+
+		check(address.name, NotEmptyString);
+		check(address.company, NotEmptyString);
+		check(address.email, EmailString);
+		check(address.phone, PhoneString);
+		check(address.birthday, BirthDayString);
+
+	}catch(err){
+		alert("입력 값을 확인하세요 : [" + err.message + "]");
+		return;
+	}
+		/*2. 데이터 검증 후 등록*/
 		AddressBook.insert(address);
 
 		tmpl.find("input[name=name]").value = "";

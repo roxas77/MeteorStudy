@@ -21,6 +21,20 @@ Template.addressListItem.events({
 			company : tmpl.find("input[name=company]").value,
 			birthday : tmpl.find("input[name=birthday]").value
 		};
+
+	try{
+
+		check(address.name, NotEmptyString);
+		check(address.company, NotEmptyString);
+		check(address.email, EmailString);
+		check(address.phone, PhoneString);
+		check(address.birthday, BirthDayString);
+
+	}catch(err){
+		alert("입력 값을 확인하세요 : [" + err.message + "]");
+		return;
+	}
+
 		AddressBook.update({_id:this._id}, {$set:address});
 		Session.set("editItem", null);
 	},
