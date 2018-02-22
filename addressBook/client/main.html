@@ -3,8 +3,11 @@
 </head>
 
 <body>
-  {{> addressInput}} <!-- input -->  
-  {{> addressList}} <!-- list -->
+  <div class="well">{{> loginButtons}}</div> <!-- 로그인 버튼 추가 -->
+  {{#if currentUser}}
+    {{> addressInput}} <!-- input -->
+    {{> addressList}} <!-- list -->
+  {{/if}}  
 </body>
 
 <!--<head>

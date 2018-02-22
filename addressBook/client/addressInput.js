@@ -5,7 +5,8 @@ Template.addressInput.events({
 			phone : tmpl.find("input[name=phone]").value,
 			email : tmpl.find("input[name=email]").value,
 			company : tmpl.find("input[name=company]").value,
-			birthday : tmpl.find("input[name=birthday]").value
+			birthday : tmpl.find("input[name=birthday]").value,
+			owner : Meteor.userId()/* 로그인된 사용자 아이디 추가 */
 		};
 
 		/*1. 데이터 검증 코드*/

@@ -2103,10 +2103,22 @@ var fixtures = [
 ];
 
 Meteor.startup(() => {
+/*
 	if(AddressBook.find().count() === 0){
 		console.log("데이터가 존재하지 않습니다. fixture 데이터를 입력합니다.");
 		for(var i = 0, len = 10; i < len; i++){
 			AddressBook.insert(fixtures[i]);
 		}
+	}
+	*/
+});
+
+Meteor.methods({
+	makeFixtureData(userId){
+		for(var i = 0, len = fixtures.length; i < len; i++){
+			fixtures[i]["owner"] = userId; //owner를 userId로 설정한다.
+			AddressBook.insert(fixtures[i]);
+		}
+		return "완료되었습니다";
 	}
 });
